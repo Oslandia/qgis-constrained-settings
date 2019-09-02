@@ -1,0 +1,14 @@
+---
+propertiesToRemove:
+  proxy:
+  - authcfg
+  - proxyEnabled
+  - proxyExcludeUrls
+  - proxyHost
+  - proxyPassword
+  - proxyPort
+  - proxyType
+  - proxyUser
+propertiesToMerge:
+  svg:
+  - searchPathsForSVG
