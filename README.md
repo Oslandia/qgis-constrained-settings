@@ -1,7 +1,9 @@
 # Constraining user settings
 
 This repo shows how to constrain user settings using a QGIS Startup Script. Constrained user
-settings are settings that users cannot freely set or override.
+settings are settings that users cannot freely set or override. This targets environments where
+administrators set properties in the global settings file that shouldn't be freely modified by
+users in their user settings.
 
 The startup script is `pyqgis_startup.py`. And the path to this script is to be specified with the
 `PYQGIS_STARTUP` environment variable. For example:
