@@ -20,9 +20,9 @@ The "user settings contraints" file is a YAML file that must be named
 `qgis_constrained_settings.yml` and located in the same folder as that containing the global
 settings file (`qgis_global_settings.ini`).
 
-Note: the startup script won't be able to find the "user settings contraints" file and the file name
-is not `qgis_contrained_settings.yml` or if the file is not located in the same directory as the
-global settings file.
+Note: the startup script won't be able to find the "user settings contraints" file if the file is
+not named `qgis_contrained_settings.yml` or if it is not located in the same directory as the global
+settings file.
 
 Here is an example of a `qgis_constrained_settings.yml` file:
 
