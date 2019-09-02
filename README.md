@@ -5,8 +5,8 @@ settings are settings that users cannot freely set or override. This targets env
 administrators set properties in the global settings file that shouldn't be freely modified by
 users in their user settings.
 
-The startup script is `pyqgis_startup.py`. And the path to this script is to be specified with the
-`PYQGIS_STARTUP` environment variable. For example:
+The startup script is [`pyqgis_startup.py`](pyqgis_startup.py). And the path to this script is to be
+specified with the `PYQGIS_STARTUP` environment variable. For example:
 
 ```sh
 $ PYQGIS_STARTUP=/home/user/pyqgis_startup.py qgis
@@ -58,8 +58,8 @@ Notes:
 * The path to the startup script (specified with the `PYQGIS_STARTUP` environment variable) must be
   absolute for QGIS to be able to execute this script when switching profiles.
 * The `PYQGIS_STARTUP` environment variable must be defined in a QGIS startup script (see
-  [qgis.sh](qgis.sh) in this repo for an example), at a system level in a global manner, or in the
+  [`qgis.sh`](qgis.sh) in this repo for an example), at a system level in a global manner, or in the
   global settings file (with `customEnvVars` in the `qgis` section).
-* In this repo the `PYQGIS_STARTUP` environment variable is defined in the [qgis.sh](qgis.sh) script
-  rather than in the global settings to avoid hard-coding the path to the script in the global
-  settings.
+* In this repo the `PYQGIS_STARTUP` environment variable is defined in the [`qgis.sh`](qgis.sh)
+  script rather than in the global settings to avoid hard-coding the path to the script in the
+  global settings.
