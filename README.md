@@ -63,3 +63,14 @@ Notes:
 * In this repo the `PYQGIS_STARTUP` environment variable is defined in the [`qgis.sh`](qgis.sh)
   script rather than in the global settings to avoid hard-coding the path to the script in the
   global settings.
+* The `pyqgis_startup.py` script relies on the `qgis` Python module. This means that the `qgis`
+  module must be available in `sys.path` when the startup script is executed. There's no problem
+  on Linux, because PyQGIS is installed in the system-wide Python environment. On Windows, with
+  QGIS installed with the OSGeo4W installer, the `qgis` Python module is installed in a specific
+  folder (either `C:\OSGeo4W64\apps\qgis\python`  or `C:\OSGeo4W64\apps\qgis-ltr\python`),
+  which is not available in `sys.path` when the startup script is executed. For that reason
+  it is necessary to modify the bat script used to launch QGIS, and add the PyQGIS installation
+  folder to the `PYTHONPATH` variable. For example:
+  ```
+  set PYTHONPATH=%OSGEO4W_ROOT%\apps\qgis\python;%PYTHONPATH%
+  ```
