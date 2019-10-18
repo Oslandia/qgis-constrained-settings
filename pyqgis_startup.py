@@ -62,7 +62,7 @@ def main():
                 continue
             globalPropertyValues = globalSettings.get(group, prop)
             globalPropertyValues = globalPropertyValues.split(",")
-            globalPropertyValues = list(map(str.strip, globalPropertyValues))
+            globalPropertyValues = list(map(lambda v: v.strip('" '), globalPropertyValues))
             userPropertyValues = globalPropertyValues + userPropertyValues
             # remove duplicates
             userPropertyValues = list(collections.OrderedDict.fromkeys(userPropertyValues))

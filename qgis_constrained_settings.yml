@@ -12,3 +12,5 @@ propertiesToRemove:
 propertiesToMerge:
   svg:
   - searchPathsForSVG
+  qgis:
+  - customEnvVars
