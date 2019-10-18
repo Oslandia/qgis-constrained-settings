@@ -69,6 +69,20 @@ def main():
             userSettings.setValue(prop, userPropertyValues)
         userSettings.endGroup()
 
+    propertyValuesToRemove = constrainedSettings.get("propertyValuesToRemove", {})
+    for group, properties in propertyValuesToRemove.items():
+        userSettings.beginGroup(group)
+        for prop in properties:
+            userPropertyValues = userSettings.value(prop)
+            if not userPropertyValues:
+                continue
+            valuesToRemove = list(map(lambda v: v.rstrip("/\\ "), properties[prop]))
+            userPropertyValues = [
+                v for v in userPropertyValues if v.rstrip("/\\ ") not in valuesToRemove
+            ]
+            userSettings.setValue(prop, userPropertyValues)
+        userSettings.endGroup()
+
 
 if __name__ == "__main__":
     main()

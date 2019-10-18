@@ -14,3 +14,7 @@ propertiesToMerge:
   - searchPathsForSVG
   qgis:
   - customEnvVars
+propertyValuesToRemove:
+  svg:
+    searchPathsForSVG:
+    - /net0/share/qgis/svg

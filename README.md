@@ -41,6 +41,12 @@ propertiesToRemove:
 propertiesToMerge:
   svg:
   - searchPathsForSVG
+  qgis:
+  - customEnvVars
+propertyValuesToRemove:
+  svg:
+    searchPathsForSVG:
+    - /net0/share/qgis/svg
 ```
 
 The section `propertiesToRemove` includes the properties that will be removed from the user settings
@@ -52,6 +58,12 @@ defined in the global settings by the startup script. For example if `searchPath
 `/usr/qgis/svg` in the user settings and to `/global/qgis/svg` in the global settings then the
 startup script will change the `searchPathsForSVG` to `/global/qgis/svg, /usr/qgis/svg` in the user
 settings. The startup script will also remove duplicates.
+
+The section `propertyValuesToRemove` includes the values that will be removed from the user settings
+by the startup script. With the above example the startup script will remove the value
+`/net0/share/qgis/svg` from the `searchPathsForSVG` property's values if it exists.
+`propertyValuesToRemove` is not to be confused with `propertiesToRemove`. The latter deals with the
+removal of properties, while the former deals with the removal of property values.
 
 Notes:
 
