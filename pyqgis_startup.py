@@ -8,6 +8,7 @@ except ModuleNotFoundError:
     sys.path.extend(["C:/OSGeo4W64/apps/qgis/python", "C:/OSGeo4W64/apps/qgis-ltr/python"])
     import qgis.core
 import yaml
+import codecs
 import pathlib
 import collections
 import configparser
@@ -62,7 +63,11 @@ def main():
                 continue
             globalPropertyValues = globalSettings.get(group, prop)
             globalPropertyValues = globalPropertyValues.split(",")
-            globalPropertyValues = list(map(lambda v: v.strip('" '), globalPropertyValues))
+            # codecs.decode(v, "unicode_espace") is used to convert the raw string into a normal
+            # string. This is required to avoid changing \\ sequences into \\\\ sequences
+            globalPropertyValues = list(
+                map(lambda v: codecs.decode(v.strip('" '), "unicode_escape"), globalPropertyValues)
+            )
             userPropertyValues = globalPropertyValues + userPropertyValues
             # remove duplicates
             userPropertyValues = list(collections.OrderedDict.fromkeys(userPropertyValues))
