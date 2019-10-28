@@ -12,6 +12,12 @@ specified with the `PYQGIS_STARTUP` environment variable. For example:
 $ PYQGIS_STARTUP=/home/user/pyqgis_startup.py qgis
 ```
 
+It can also be specified through the `--code` switch:
+
+```sh
+$ qgis --code /home/user/pyqgis_startup.py
+```
+
 QGIS will execute that script at startup time, and when switching profiles. The script is
 responsible for rewriting the user settings based on the constraints defined in the "user settings
 contraints" file.
