@@ -1,18 +1,10 @@
-import sys
-try:
-    import qgis.core
-except ModuleNotFoundError:
-    # when QGIS is installed using the OSGeo4W installer pyqgis is installed
-    # in a specific folder (C:/OSGeo4W64/apps/qgis/python by default). So we
-    # need to add that folder to sys.path prior to importing qgis.
-    sys.path.extend(["C:/OSGeo4W64/apps/qgis/python", "C:/OSGeo4W64/apps/qgis-ltr/python"])
-    import qgis.core
 import yaml
 import codecs
 import pathlib
 import collections
 import configparser
 import PyQt5.QtCore
+import qgis.core
 
 
 def main():
