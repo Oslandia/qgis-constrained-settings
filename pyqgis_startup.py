@@ -53,6 +53,8 @@ def main():
             userPropertyValues = userSettings.value(prop)
             if not userPropertyValues:
                 continue
+            if not isinstance(userPropertyValues, list):
+                userPropertyValues = [userPropertyValues]
             globalPropertyValues = globalSettings.get(group, prop)
             globalPropertyValues = globalPropertyValues.split(",")
             # codecs.decode(v, "unicode_espace") is used to convert the raw string into a normal
